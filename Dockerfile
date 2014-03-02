@@ -12,7 +12,7 @@ ENV PATH /usr/local/rvm/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/s
 RUN /bin/bash -l -c 'rvm requirements'
 RUN /bin/bash -l -c 'rvm install 2.0.0-p353'
 RUN apt-get install --yes rubygems
-RUN /bin/bash -l -c 'gem install bundler --no-ri --no-rdoc'
+RUN /bin/bash -l -c 'gem update --system && gem install bundler --no-ri --no-rdoc'
 
 ENV DEBIAN_FRONTEND dialog
 CMD /bin/bash -l -c 'rvm use 2.0.0-p353 --default'
